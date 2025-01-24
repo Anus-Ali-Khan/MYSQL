@@ -33,7 +33,7 @@ SELECT * FROM bands LIMIT 2;
 SELECT name FROM bands;
 SELECT id AS 'ID', name AS 'Band Name'
 FROM bands;
-SELECT * FROM bands ORDER BY name;
+SELECT * FROM bands ORDER BY name;	
 
 INSERT INTO albums (name,release_year,band_id)
 VALUES ('The Number of the Beasts',1985,1),		
@@ -46,7 +46,7 @@ SELECT * FROM albums;
 
 SELECT DISTINCT name FROM albums;
 
--- where is uded to filter the items from database 
+-- where is used to filter the items from database 
 UPDATE albums 
 SET release_year = 1982
 WHERE id  = 1;
@@ -72,7 +72,7 @@ DELETE FROM albums WHERE id = 5;
 
 -- join method joins the two tables
 -- inner join same as join it only returns the same elements in the left side and right side of Join method (bands JOIN albums)  ,
--- left join it return s all the elements of table on left side   , 
+-- left join it returns all the elements of table on left side   , 
 -- right join it returns all the elements of right sie of table
 
 SELECT * FROM bands

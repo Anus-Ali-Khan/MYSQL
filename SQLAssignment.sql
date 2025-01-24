@@ -239,3 +239,19 @@ INSERT INTO songs(id,name,length,album_id) VALUES (182,'Frodo''s Dream',3+(06/60
 SELECT * FROM albums;
 SELECT * FROM bands;
 SELECT * FROM songs;
+
+-- Q2
+SELECT name AS 'Band Name' FROM bands;
+
+-- Q3
+SELECT * FROM albums 
+WHERE release_year IS NOT NULL  ORDER BY release_year ASC ;
+
+SELECT * FROM albums 
+WHERE id =5;
+
+-- Q4
+SELECT name AS 'Band Name' FROM bands 
+INNER JOIN albums ON bands.id = albums.band_id
+GROUP BY bands.id;
+
