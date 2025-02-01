@@ -251,7 +251,16 @@ SELECT * FROM albums
 WHERE id =5;
 
 -- Q4
-SELECT name AS 'Band Name' FROM bands 
-INNER JOIN albums ON bands.id = albums.band_id
-GROUP BY bands.id;
+SELECT bands.name AS 'Band Name' FROM bands 
+RIGHT JOIN albums ON bands.id = albums.band_id;
+
+-- Q5
+SELECT bands.name as 'Band Name' FROM bands
+LEFT JOIN albums ON  bands.id = albums.band_id
+WHERE albums.name IS NULL; 
+
+
+
+
+ 
 

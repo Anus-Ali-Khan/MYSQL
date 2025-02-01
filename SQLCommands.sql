@@ -103,4 +103,8 @@ WHERE b.name = 'Deuce'
 GROUP BY b.id
 HAVING num_albums = 1;
 
+-- GROUP BY groups the rows of tables that have same values 
+-- Where cannot be used with aggregate function y=thats why HAVING is introduced
+-- COUNT returns the number of rows that meets the specified condition
+
 
