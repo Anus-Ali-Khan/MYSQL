@@ -259,6 +259,14 @@ SELECT bands.name as 'Band Name' FROM bands
 LEFT JOIN albums ON  bands.id = albums.band_id
 WHERE albums.name IS NULL; 
 
+-- Q6
+SELECT a.name AS 'Name',  a.release_year AS 'Release Year',
+SUM(s.length) AS 'Duration'
+FROM albums as a 
+LEFT JOIN songs AS s ON  a.id =  s.album_id
+GROUP BY a.id
+ORDER BY SUM(s.length) DESC ;
+
 
 
 
