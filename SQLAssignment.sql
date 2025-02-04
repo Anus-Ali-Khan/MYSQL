@@ -260,12 +260,34 @@ LEFT JOIN albums ON  bands.id = albums.band_id
 WHERE albums.name IS NULL; 
 
 -- Q6
-SELECT a.name AS 'Name',  a.release_year AS 'Release Year',
+SELECT  a.name AS 'Name',  a.release_year AS 'Release Year',
 SUM(s.length) AS 'Duration'
 FROM albums as a 
 LEFT JOIN songs AS s ON  a.id =  s.album_id
 GROUP BY a.id
-ORDER BY SUM(s.length) DESC ;
+ORDER BY SUM(s.length) DESC
+LIMIT 1 ;
+
+-- Q7
+SELECT * FROM albums
+WHERE release_year is NULL;
+
+UPDATE albums 
+SET release_year = 1986
+WHERE id =4;
+SELECT * FROM albums;
+
+-- Q8
+SELECT * FROM bands;
+INSERT INTO bands(id,name) VALUES (8,'Test');
+INSERT INTO albums(id,name,release_year,band_id) VALUES (19,'Test album',2010,8);
+
+-- Q9
+DELETE FROM albums WHERE id = 19;
+DELETE FROM bands WHERE id = 8;
+
+-- Q10
+SELECT AVG(s.length) as 'Average Song Duration' FROM songs as s;
 
 
 
