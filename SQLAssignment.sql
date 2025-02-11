@@ -289,6 +289,16 @@ DELETE FROM bands WHERE id = 8;
 -- Q10
 SELECT AVG(s.length) as 'Average Song Duration' FROM songs as s;
 
+-- Q11
+SELECT a.name as 'Album', a.release_year as 'Release Year',
+MAX(s.length) as duration From Albums as a 
+LEFT JOIN songs as s ON a.id = s.album_id 
+GROUP BY a.id;
+
+-- Q12
+
+
+
 
 
 
