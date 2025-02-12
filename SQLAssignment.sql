@@ -296,6 +296,11 @@ LEFT JOIN songs as s ON a.id = s.album_id
 GROUP BY a.id;
 
 -- Q12
+SELECT b.name as 'Band',COUNT(s.id) as 'Number Of Songs' FROM bands as b 
+RIGHT JOIN albums as a ON b.id = a.band_id
+LEFT JOIN songs as s ON a.id = s.album_id
+GROUP BY a.band_id; 
+
 
 
 
